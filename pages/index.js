@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Navbar } from '../components/Navbar'
 import HeroImage from '../public/images/HeroImage.jpg'
+import { SectionTitle } from '../components/Sectiontitle'
 
 export default function Home() {
 
@@ -24,12 +25,10 @@ export default function Home() {
 
 
     {/** Section: My Work */}
-      <section className='h-full bg-black px-16 pt-4'>
+      <section className='h-full w-full bg-black px-16 pt-4'>
 
-        <div className='h-fit flex flex-col justify-between items-start'>
-          <hr className='bg-slate-400 h-0.5 w-24' />
-          <h4 className='text-3xl'>My Work</h4>
-        </div>
+        <SectionTitle title={'My Work'} />
+
       </section>
 
 
