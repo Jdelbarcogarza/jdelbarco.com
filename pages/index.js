@@ -16,6 +16,7 @@ export default function Home() {
         {/** Height de h-1/6 */}
         <Navbar />
 
+        {/** Height de h-5/6 */}
         <div className='h-5/6 w-full flex flex-col justify-center items-center pl-8 border-2 border-lime-700'>
           <h1 className='text-5xl'><strong>I love</strong> building exciting <strong>software</strong></h1>
           <button className='text-2xl bg-teal-800 p-2 mt-8 rounded-md'>Contact Me</button>
