@@ -10,7 +10,7 @@ export const Navbar = () => {
 
     <nav className='flex justify-between items-center h-1/6 px-16 py-4 text-white bg-black'>
       {/** Aqui va el logo con su respectivo font */}
-      <div className='text-4xl'>JDelBarco</div>
+      <div className='text-6xl font-Caveat'>JDelBarco</div>
 
       {/** Lista de elementos que sirven de links de navegación*/}
       <div>
