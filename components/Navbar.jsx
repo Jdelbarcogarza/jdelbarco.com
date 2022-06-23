@@ -15,7 +15,7 @@ export const Navbar = () => {
 
   return (
 
-    <nav className='flex justify-between items-center h-1/6 px-4 md:px-16 py-4 text-white bg-black border-2 border-red-700'>
+    <nav className='flex justify-between items-center grow md:grow-0 h-full px-4 md:px-16 py-4 text-white bg-black border-2 border-red-700'>
       {/** Aqui va el logo con su respectivo font */}
       <div className='text-5xl md:text-6xl font-Caveat'>JDelBarco</div>
 
