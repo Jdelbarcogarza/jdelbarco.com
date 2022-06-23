@@ -30,9 +30,9 @@ export default function Home() {
             <Image src={HeroImage} alt='/' objectFit='cover' layout='intrinsic' />
           </div>
 
-          <div>
+          <div className='flex flex-col content-center'>
             <h1 className='text-2xl md:text-5xl'><strong>I love</strong> building exciting <strong>software</strong></h1>
-            <button className='text-lg md:text-2xl bg-teal-800 p-2 mt-8 rounded-md'>Contact Me</button>
+            <button className='w-fit place-self-center text-lg md:self-start md:text-2xl bg-teal-800 p-2 my-8 rounded-md'>Contact Me</button>
           </div>
         </div>
 
