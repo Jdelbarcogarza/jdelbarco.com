@@ -13,17 +13,17 @@ export default function Home() {
 
       <section className='h-full w-full text-white'>
 
-
         {/** Height de h-1/6 */}
-        <Navbar />
-
+        <div className='w-full h-1/6'>
+          <Navbar />
+        </div>
 
 
         {/** Height de h-5/6 */}
         <div className='h-5/6 w-full flex flex-col justify-around items-center px-2
         md:flex-row-reverse md:px-6
          border-2 border-lime-700'>
-          
+
           <div className=' w-56 mt-4
           md:w-72'>
             <Image src={HeroImage} alt='/' objectFit='cover' layout='responsive' />
