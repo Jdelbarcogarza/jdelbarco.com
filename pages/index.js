@@ -25,7 +25,7 @@ export default function Home() {
          border-2 border-lime-700'>
           
           <div className=' w-56 mt-4
-          md:w-64'>
+          md:w-72'>
             <Image src={HeroImage} alt='/' objectFit='cover' layout='responsive' />
           </div>
 
