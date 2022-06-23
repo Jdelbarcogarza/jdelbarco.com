@@ -52,7 +52,7 @@ export const Navbar = () => {
         </button>
 
         {/** drop down menu */}
-        <div className={mobileMenuActive ? 'absolute z-10 flex flex-col h-5/6 w-full right-0 top-28 bg-white text-black' : 'hidden'}>
+        <div className={mobileMenuActive ? 'absolute z-10 flex flex-col h-5/6 w-full right-0 bottom-0 bg-white text-black' : 'hidden'}>
         <ul className='h-full w-full flex flex-col justify-start items-center text-3xl gap-1 mt-2'>
           {webPageSections.map((section, id) => {
             return (
