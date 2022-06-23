@@ -29,7 +29,7 @@ export default function Home() {
             <Image src={HeroImage} alt='/' objectFit='cover' layout='responsive' />
           </div>
 
-          <div className='flex flex-col content-center mb-16 md:mb-0 '>
+          <div className='flex flex-col content-center mb-16 md:mb-0 w-fit'>
             <h1 className=' text-center text-2xl sm:text-3xl md:text-5xl md:text-left'><strong>I love</strong> building exciting <strong>software</strong></h1>
             <button className='w-fit place-self-center text-lg md:self-start sm:text-2xl md:text-2xl bg-teal-800 p-2 my-8 rounded-md'>Contact Me</button>
           </div>
