@@ -38,7 +38,7 @@ export const Navbar = () => {
       <div className="md:hidden">
         {/** Hamburguer icon  */}
         <button className={mobileMenuActive ? 'hidden' : "md:hidden"} onClick={openMobileMenu}>
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
 
@@ -52,7 +52,7 @@ export const Navbar = () => {
         </button>
 
         {/** drop down menu */}
-        <div className={mobileMenuActive ? 'absolute flex flex-col h-5/6 w-full right-0 top-28 bg-white text-black' : 'hidden'}>
+        <div className={mobileMenuActive ? 'absolute z-10 flex flex-col h-5/6 w-full right-0 top-28 bg-white text-black' : 'hidden'}>
         <ul className='h-full w-full flex flex-col justify-start items-center text-3xl gap-1 mt-2'>
           {webPageSections.map((section, id) => {
             return (
