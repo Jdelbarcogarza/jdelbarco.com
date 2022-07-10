@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Navbar } from '../components/Navbar'
 import HeroImage from '../public/images/Coding_PNG.png'
-import { SectionTitle } from '../components/Sectiontitle'
+import { SectionTitle } from '../components/SectionTitle'
 import { MethodologyCard } from '../components/MethodologyCard'
 
 // import of images for work section (methodology part)
