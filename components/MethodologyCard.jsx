@@ -13,7 +13,7 @@ export const MethodologyCard = ({title, image, description}) => {
         {/** Photo and description */}
       <div className='h-full flex flex-col justify-center ' >
         <div className='w-1/2 md:h-72 justify-center self-center max-w-xs '>
-          <Image src={image} alt='/' objectFit='cover' layout='responsive' priority />
+          <Image src={image} alt='/' objectFit='cover' layout='responsive' width={250} height={250} priority />
         </div>
         <p className='whitespace-normal max-w-prose slef-center xs:mt-8'>{description}</p>
       </div>
