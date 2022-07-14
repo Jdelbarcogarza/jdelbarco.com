@@ -1,7 +1,9 @@
 import React from 'react'
 import Image from 'next/image'
 
-export const MethodologyCard = ({ image, title, description }) => {
+
+export const MethodologyCard = ({title, image, description}) => {
+
   return (
 
     <div className='flex flex-col text-white h-full items-center'>
