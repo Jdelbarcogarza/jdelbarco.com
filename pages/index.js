@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import axios from 'axios'
 import { Navbar } from '../components/Navbar'
 import HeroImage from '../public/images/Coding_PNG.png'
 import { SectionTitle } from '../components/SectionTitle'
@@ -12,7 +13,7 @@ import Programming from '../public/images/workSectionSVG/programming.svg'
 import Team from '../public/images/workSectionSVG/collaboration.svg'
 
 
-export default function Home() {
+export default function Home({services}) {
 
   const webPageSections = ["Home", "My Work", "Contact Me"]
 
@@ -83,15 +84,15 @@ export default function Home() {
         
         {/** EL GAP EN TAMAÑO MEDIANO CAMBIALO CUANDO YA SEPAS QUE POONER EN LA DESCRIPCIÓNP PARA QUE TODO ENCAJE */}
         <div className='py-16 grid grid-flow-row grid-cols-1 md:grid-cols-2 justify-items-center gap-24 md:gap-x-16 md:gap-y-24' >
-          {workMethodology.map((obj, id) => {
+          {services.map((service) => {
             return (
 
               <div className='w-full h-full px-6'
-              key={id}>
+              key={service.id}>
                 <MethodologyCard
-                  title={obj.title}
-                  image={obj.image}
-                  description={obj.description}
+                  title={service.attributes.title}
+                  image={service.attributes.image.data.attributes.url}
+                  description={service.attributes.description}
                 />
               </div>
             )
@@ -105,4 +106,16 @@ export default function Home() {
 
     </main>
   )
+}
+
+export async function getStaticProps() {
+  const res = await axios.get('http://localhost:1337/api/services?populate=*')
+
+  
+
+  return {
+    props: {
+      services: res.data.data,
+    },
+  };
 }
