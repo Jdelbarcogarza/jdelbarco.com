@@ -6,41 +6,11 @@ import HeroImage from '../public/images/Coding_PNG.png'
 import { SectionTitle } from '../components/SectionTitle'
 import { MethodologyCard } from '../components/MethodologyCard'
 
-// import of images for work section (methodology part)
-import Manage from '../public/images/workSectionSVG/manage.svg'
-import DesignProcess from '../public/images/workSectionSVG/design_process.svg'
-import Programming from '../public/images/workSectionSVG/programming.svg'
-import Team from '../public/images/workSectionSVG/collaboration.svg'
-
-
 export default function Home({services}) {
 
   const webPageSections = ["Home", "My Work", "Contact Me"]
 
-  const workMethodology = [
-    {
-      title: 'Manage software projects', image: Manage,
-      description: 'Esta es la descripción de mi work section\
-      que se ve bien padr a ver una descripcion mas larga de todo el mecmonimo\
-      que voy a etar dicienod pq lit esta cabroun aqui'
-    },
-    {
-      title: 'Working as a team', image: Team,
-      description: 'Descripcion de como paso de hacer figmas n shit a algo\
-      que si es 100% real'
-    },
-    {
-      title: 'Full stack developer', image: Programming,
-      description: 'Descripcion de como paso de hacer figmas n shit a algo\
-      que si es 100% real'
-    },
-    {
-      title: 'Create the real product', image: DesignProcess,
-      description: 'Descripcion de como paso de hacer figmas n shit a algo\
-      que si es 100% real Esta es la descripción de mi work section\
-      que se ve bien padr a ver una descrioun aqui'
-    },
-  ]
+
 
   return (
     <main className='h-screen w-full text-white bg-black'>
@@ -91,7 +61,7 @@ export default function Home({services}) {
               key={service.id}>
                 <MethodologyCard
                   title={service.attributes.title}
-                  image={service.attributes.image.data.attributes.url}
+                  image={'http://localhost:1337/uploads/programming_3b1dfd859a.svg'}
                   description={service.attributes.description}
                 />
               </div>
@@ -111,7 +81,8 @@ export default function Home({services}) {
 export async function getStaticProps() {
   const res = await axios.get('http://localhost:1337/api/services?populate=*')
 
-  
+  // get image URL
+  // console.log(res.data.data[0].attributes.image.data.attributes.url)
 
   return {
     props: {
