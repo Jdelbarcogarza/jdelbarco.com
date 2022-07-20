@@ -4,8 +4,6 @@ import Image from 'next/image'
 
 export const MethodologyCard = ({title, image, description}) => {
 
-  console.log(image.width)
-
   return (
 
     <div className='flex flex-col text-white h-full items-center'>
