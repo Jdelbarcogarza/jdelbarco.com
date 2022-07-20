@@ -8,7 +8,7 @@ import { MethodologyCard } from '../components/MethodologyCard'
 
 export default function Home({services}) {
 
-  const webPageSections = ["Home", "My Work", "Contact Me"]
+
 
 
 
@@ -83,11 +83,6 @@ export async function getStaticProps() {
 
 
   const res = await axios.get(`http://localhost:1337/api/services?populate=*`)
-
-
-  // get image URL
-  console.log('foto', res.data.data[0].attributes.image.data.attributes)
-
 
   return {
     props: {
