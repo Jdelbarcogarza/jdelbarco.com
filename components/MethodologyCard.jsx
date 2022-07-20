@@ -21,7 +21,7 @@ export const MethodologyCard = ({title, image, description}) => {
           height={image.height}
           priority />
         </div>
-        <p className='whitespace-normal max-w-prose slef-center xs:mt-8'>{description}</p>
+        <p className='whitespace-normal max-w-prose self-center mt-8 md:mt-0'>{description}</p>
       </div>
     </div>
   )
