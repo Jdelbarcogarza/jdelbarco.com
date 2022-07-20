@@ -58,6 +58,7 @@ export default function Home({services}) {
             return (
 
               <div className='w-full h-full px-6'
+                  
               key={service.id}>
                 <MethodologyCard
                   title={service.attributes.title}
@@ -84,13 +85,12 @@ export async function getStaticProps() {
   const res = await axios.get(`http://localhost:1337/api/services?populate=*`)
 
   // get image URL
-  console.log(res.data.data)
-  console.log(res.data.data[0].attributes.image)
+  console.log('foto', res.data.data[0].attributes.image.data.attributes.url)
 
 
   return {
     props: {
-      services: res.data.data,
+      services: res.data.data
     },
   };
 }
