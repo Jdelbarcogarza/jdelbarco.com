@@ -42,7 +42,7 @@ export default function Home({services}) {
       {/** Section: My Work 
            HEX COLOR USED FOR UNDRAW SVGs: #07A291      
       */}
-      <section className='w-full bg-black px-2 mb-16
+      <section className='w-full bg-black px-2
       md:px-6'>
 
         <div className='px-16 py-4'>
@@ -70,7 +70,13 @@ export default function Home({services}) {
 
       </section>
 
+      <section className='w-full h-full bg-black px-2 mb-16
+      md:px-6'>
 
+          <SectionTitle title={"Contact"} />
+
+      </section>
+      
 
     </main>
   )
