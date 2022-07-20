@@ -9,9 +9,6 @@ import { MethodologyCard } from '../components/MethodologyCard'
 export default function Home({services}) {
 
 
-
-
-
   return (
     <main className='h-screen w-full text-white bg-black'>
 
