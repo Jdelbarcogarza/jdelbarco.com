@@ -3,7 +3,7 @@ import React from 'react'
 
 export const Navbar = () => {
 
-  const webPageSections = ["Home", "My Work", "Contact Me"]
+  const webPageSections = ["Home", "My Work", "Blog", "Contact Me"]
 
   // esto esta mal desde el principio. Debe siempre estar obteniendo la actual width de la pantalla para decir si
   // se activa o no
