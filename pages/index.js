@@ -5,6 +5,8 @@ import { Navbar } from '../components/Navbar'
 import HeroImage from '../public/images/Coding_PNG.png'
 import { SectionTitle } from '../components/SectionTitle'
 import { MethodologyCard } from '../components/MethodologyCard'
+import ReactMarkdown from 'react-markdown'
+import React from 'react'
 
 export default function Home({services, heroSectionTitle}) {
 
@@ -31,7 +33,7 @@ export default function Home({services, heroSectionTitle}) {
           </div>
 
           <div className='flex flex-col content-center mb-16 md:mb-0 w-fit'>
-            <h1 className=' text-center text-2xl sm:text-3xl md:text-5xl md:text-left'>{heroSectionTitle}</h1>
+            <h1 className=' text-center text-2xl sm:text-3xl md:text-5xl md:text-left'><ReactMarkdown>{heroSectionTitle}</ReactMarkdown></h1>
             <button className='w-fit place-self-center text-lg md:self-start sm:text-2xl md:text-2xl bg-teal-800 p-2 my-8 rounded-md'>Contact Me</button>
           </div>
         </div>
@@ -81,6 +83,7 @@ export async function getStaticProps() {
   // get hero section
   const resHeroSection = await axios.get('http://localhost:1337/api/hero-section')
 
+  console.log(resHeroSection.data.data.attributes.title)
 
   // get work section
   const resWorkSection = await axios.get('http://localhost:1337/api/services?populate=*')
