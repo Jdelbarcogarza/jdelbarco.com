@@ -4,10 +4,12 @@ import { Navbar } from '../components/Navbar'
 import HeroImage from '../public/images/Coding_PNG.png'
 import { SectionTitle } from '../components/SectionTitle'
 import { MethodologyCard } from '../components/MethodologyCard'
+import { ContactContent } from '../components/ContactContent'
+import { ContactForm } from '../components/ContactForm'
 import ReactMarkdown from 'react-markdown'
 import React from 'react'
 
-export default function Home({services, heroSectionTitle}) {
+export default function Home({services, heroSectionTitle, contactSectionContent}) {
 
 
   return (
@@ -74,7 +76,17 @@ export default function Home({services, heroSectionTitle}) {
       <section className='w-full h-full bg-black px-2 mb-16
       md:px-6'>
 
-          <SectionTitle title={"Contact"} />
+        <div className='px-16 py-4'>
+          <SectionTitle title={'Contact Me'} />
+        </div>
+
+        <div className='h-fit grid grid-cols-1 md:grid-cols-2'>
+
+          <ContactContent>{contactSectionContent}</ContactContent>
+          <ContactForm />
+
+
+        </div>
 
       </section>
       
@@ -85,18 +97,31 @@ export default function Home({services, heroSectionTitle}) {
 
 export async function getStaticProps() {
 
-  // get hero section
-  const resHeroSection = await axios.get('http://localhost:1337/api/hero-section')
+  
+  
+  const axiosInstance = axios.create({
+    // Base url fromm where endpoint starts
+    baseURL: 'http://localhost:1337',
 
-  console.log(resHeroSection.data.data.attributes.title)
+  })
+
+  // get hero section
+  const resHeroSection = await axiosInstance.get('/api/hero-section')
 
   // get work section
-  const resWorkSection = await axios.get('http://localhost:1337/api/services?populate=*')
+  const resWorkSection = await axiosInstance.get('/api/services?populate=*')
 
+
+  // get contact section
+  const resContactSection = await axiosInstance.get('/api/contact-section')
+
+  console.log(resContactSection.data.data)
+ 
   return {
     props: {
       services: resWorkSection.data.data,
-      heroSectionTitle: resHeroSection.data.data.attributes.title
+      heroSectionTitle: resHeroSection.data.data.attributes.title,
+      contactSectionContent: resContactSection.data.data.attributes.content
     },
   };
 }
