@@ -9,7 +9,7 @@ import { ContactForm } from '../components/ContactForm'
 import ReactMarkdown from 'react-markdown'
 import React from 'react'
 
-export default function Home({services, heroSectionTitle, contactSectionContent}) {
+export default function Home({ services, heroSectionTitle, contactSection }) {
 
 
   return (
@@ -51,15 +51,15 @@ export default function Home({services, heroSectionTitle, contactSectionContent}
         <div className='px-16 py-4'>
           <SectionTitle title={'My Work'} />
         </div>
-        
+
         {/** EL GAP EN TAMAÑO MEDIANO CAMBIALO CUANDO YA SEPAS QUE POONER EN LA DESCRIPCIÓNP PARA QUE TODO ENCAJE */}
         <div className='py-16 grid grid-flow-row grid-cols-1 md:grid-cols-2 justify-items-center gap-24 md:gap-x-16 md:gap-y-24' >
           {services.map((service) => {
             return (
 
               <div className='w-full h-full px-6'
-                  
-              key={service.id}>
+
+                key={service.id}>
                 <MethodologyCard
                   title={service.attributes.title}
                   image={service.attributes.image.data.attributes}
@@ -73,23 +73,29 @@ export default function Home({services, heroSectionTitle, contactSectionContent}
 
       </section>
 
-      <section className='w-full h-full bg-black px-2 mb-16
+      <section className='w-full bg-black px-2 mb-16
       md:px-6'>
 
         <div className='px-16 py-4'>
           <SectionTitle title={'Contact Me'} />
         </div>
 
-        <div className='h-fit grid grid-cols-1 md:grid-cols-2'>
+        <div className='h-full grid grid-cols-1 md:grid-cols-2 pt-16'>
+          <div className='flex justify-center content-center'>
+            <ContactContent title={contactSection.attributes.title}
+              quote={contactSection.attributes.quote}
+              author={contactSection.attributes.author}>
+              {contactSection.attributes.content}
+            </ContactContent>
 
-          <ContactContent>{contactSectionContent}</ContactContent>
+          </div>
           <ContactForm />
 
 
         </div>
 
       </section>
-      
+
 
     </main>
   )
@@ -97,8 +103,8 @@ export default function Home({services, heroSectionTitle, contactSectionContent}
 
 export async function getStaticProps() {
 
-  
-  
+
+
   const axiosInstance = axios.create({
     // Base url fromm where endpoint starts
     baseURL: 'http://localhost:1337',
@@ -115,13 +121,13 @@ export async function getStaticProps() {
   // get contact section
   const resContactSection = await axiosInstance.get('/api/contact-section')
 
-  console.log(resContactSection.data.data)
- 
+  console.log(resContactSection.data.data.attributes)
+
   return {
     props: {
       services: resWorkSection.data.data,
       heroSectionTitle: resHeroSection.data.data.attributes.title,
-      contactSectionContent: resContactSection.data.data.attributes.content
+      contactSection: resContactSection.data.data
     },
   };
 }
