@@ -9,7 +9,7 @@ export const SocialIcons = () => {
   const iconSize = 16
 
   return (
-    <div className='flex w-full justify-around'>
+    <div className='flex w-full justify-around content-center'>
 
       <a href='#'
       className= {`w-${iconSize} h-${iconSize}`}
