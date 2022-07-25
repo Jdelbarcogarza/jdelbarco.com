@@ -6,11 +6,29 @@ import LinkedinIcon from '../public/linkedin.svg'
 
 
 export const SocialIcons = () => {
+  const iconSize = 16
+
   return (
-    <div>
-      <SpotifyIcon />
-      <GithubIcon />
-      <LinkedinIcon />
+    <div className='flex w-full justify-around'>
+
+      <a href='#'
+      className= {`w-${iconSize} h-${iconSize}`}
+      >
+        <SpotifyIcon />
+      </a>
+
+      <a href='#'
+      className= {`w-${iconSize} h-${iconSize}`}
+      >
+        <GithubIcon />
+      </a>
+
+      <a href='#'
+      className= {`w-${iconSize} h-${iconSize}`}
+      >
+        <LinkedinIcon />
+      </a>
+
     </div>
   )
 }
