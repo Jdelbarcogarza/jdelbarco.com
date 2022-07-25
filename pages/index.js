@@ -77,12 +77,12 @@ export default function Home({ services, heroSectionTitle, contactSection }) {
       md:px-6'>
 
         <div className='px-16 py-4'>
-          <SectionTitle title={'Contact Me'} />
+          <SectionTitle title={'Get in touch!'} />
         </div>
 
         <div className='h-full grid grid-cols-1 md:grid-cols-2 pt-16'>
           <div className='flex justify-center content-center'>
-            <ContactContent title={contactSection.attributes.title}
+            <ContactContent
               quote={contactSection.attributes.quote}
               author={contactSection.attributes.author}>
               {contactSection.attributes.content}
