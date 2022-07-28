@@ -73,15 +73,15 @@ export default function Home({ services, heroSectionTitle, contactSection }) {
 
       </section>
 
-      <section className='w-full bg-black px-2 mb-16
-      md:px-6'>
+      <section className=' bg-black px-2 mb-16 md:px-6'>
 
         <div className='px-16 py-4'>
           <SectionTitle title={'Get in touch!'} />
         </div>
 
-        <div className='h-full grid grid-cols-1 md:grid-cols-2 pt-16'>
-          <div className='flex justify-center content-center'>
+        <div className='h-full flex flex-col-reverse md:flex-row pt-8 md:justify-around'>
+          
+          <div className='flex justify-center self-center w-full md:w-1/2'>
             <ContactContent
               quote={contactSection.attributes.quote}
               author={contactSection.attributes.author}>
@@ -89,8 +89,10 @@ export default function Home({ services, heroSectionTitle, contactSection }) {
             </ContactContent>
 
           </div>
-          <ContactForm />
 
+          <div className='flex w-full md:w-1/2 justify-center'>
+            <ContactForm />
+          </div>
 
         </div>
 
