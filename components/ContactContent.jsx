@@ -8,10 +8,11 @@ export const ContactContent = ({ title, quote, author, children }) => {
   return (
     <>
       
-      <div className='pb-8 p-4 flex flex-col gap-16'>
+      <div className='py-8 px-4 flex flex-col gap-8'>
 
-        <article className=''>
-          <p className='italic text-2xl font-medium'>{quote}</p>
+
+        <article className='text-center'>
+          <p className='italic text-2xl font-medium '>{quote}</p>
           <p className='text-xl '>&#8212; {author}</p>
         </article>
         {/*
@@ -20,7 +21,7 @@ export const ContactContent = ({ title, quote, author, children }) => {
         </div>
         */}
 
-        <div className=''>
+        <div className=' w-full'>
           <SocialIcons />
         </div>
       </div>
