@@ -73,7 +73,7 @@ export default function Home({ services, heroSectionTitle, contactSection }) {
 
       </section>
 
-      <section className=' bg-black px-2 md:px-6'>
+      <section className=' bg-black px-2 py-6 md:px-6'>
 
         <div className='px-16 py-4'>
           <SectionTitle title={'Get in touch!'} />
