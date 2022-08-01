@@ -12,7 +12,7 @@ export const Footer = () => {
             <footer className='flex flex-col space-y-6 py-6 items-center bg-black'>
                 <div className='text-5xl font-Caveat'>JDelBarco</div>
 
-                <div className='flex w-1/3 justify-evenly font-medium text-xl'>
+                <div className='flex w-full flex-wrap md:w-1/3 justify-evenly font-medium text-xl'>
                     {webPageSections.map((item, id) => {
                         return (
 
