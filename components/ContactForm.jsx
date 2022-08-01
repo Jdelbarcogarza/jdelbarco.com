@@ -12,8 +12,9 @@ export const ContactForm = () => {
 
   return (
 
+
       <form onSubmit={handleSubmit(onSubmit)}
-        className='flex flex-col gap-8 pb-8 p-4 w-full sm:w-full md:w-2/3'
+        className='flex flex-col gap-8 pb-8 p-4 w-full sm:w-full md:w-2/3 bg-gray-400 rounded-lg'
       >
 
         <FormTextField title={'Name'} {...register('name')} />
@@ -32,10 +33,11 @@ export const ContactForm = () => {
         </FormTextArea>
 
 
-        <input 
-        className='w-fit self-center bg-teal-700 text-xl rounded-md p-2 font-medium'
-        type='submit' />
+        <input
+          className='w-fit self-center bg-teal-700 text-xl rounded-md p-2 font-medium'
+          type='submit' />
 
       </form>
+  
   )
 }
