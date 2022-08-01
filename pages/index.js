@@ -6,6 +6,7 @@ import { SectionTitle } from '../components/SectionTitle'
 import { MethodologyCard } from '../components/MethodologyCard'
 import { ContactContent } from '../components/ContactContent'
 import { ContactForm } from '../components/ContactForm'
+import { Footer } from '../components/Footer'
 import ReactMarkdown from 'react-markdown'
 import React from 'react'
 
@@ -98,10 +99,8 @@ export default function Home({ services, heroSectionTitle, contactSection }) {
 
       </section>
       
-      <footer className='text-black'>
-        hola
-      </footer>
-
+      
+      <Footer/>
 
     </main>
   )
@@ -127,7 +126,6 @@ export async function getStaticProps() {
   // get contact section
   const resContactSection = await axiosInstance.get('/api/contact-section')
 
-  console.log(resContactSection.data.data.attributes)
 
   return {
     props: {
